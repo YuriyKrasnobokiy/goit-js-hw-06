@@ -15,9 +15,13 @@ const images = [
 
 const list = document.querySelector(".gallery");
 
+const arrLi = [];
+
 images.map((item) => {
-  list.insertAdjacentHTML(
-    "beforeend",
-    `<li> <img width=800 src = ${item.url} alt = "${item.alt}"/> </li>`,
-  );
+  const newLi = `<li> <img class="gallery-item" width=500 hight = auto src = ${item.url} alt = "${item.alt}"/> </li>`;
+  arrLi.push(newLi);
 });
+
+const [...newLi] = arrLi;
+
+list.insertAdjacentHTML("beforeend", [...newLi]);
