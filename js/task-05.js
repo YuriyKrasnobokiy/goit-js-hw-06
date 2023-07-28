@@ -5,5 +5,9 @@ const title = document.querySelector("#name-output");
 query.addEventListener("input", handlerQuery);
 
 function handlerQuery(evt) {
-  title.textContent = evt.currentTarget.value;
+  if (evt.currentTarget.value === "") {
+    title.textContent = "Anonymous";
+  } else {
+    title.textContent = evt.currentTarget.value.trim();
+  }
 }
