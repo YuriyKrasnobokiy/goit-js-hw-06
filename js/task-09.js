@@ -7,8 +7,8 @@ const elements = {
 elements.button.addEventListener("click", handlerClick);
 
 function handlerClick() {
-  elements.body.style.backgroundColor = elements.color.textContent;
   elements.color.textContent = getRandomHexColor();
+  elements.body.style.backgroundColor = elements.color.textContent;
 }
 
 function getRandomHexColor() {
