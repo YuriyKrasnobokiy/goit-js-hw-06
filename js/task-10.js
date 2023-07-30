@@ -19,18 +19,15 @@ function createBoxes(amount) {
   for (let i = 0; i < Number(amount); i += 1) {
     let newEl = document.createElement("div");
     newEl.style.backgroundColor = getRandomHexColor();
-    newEl.style.width = "30px";
-    newEl.style.height = "30px";
+    newEl.style.width = `${30 + 10 * i}px`;
+    newEl.style.height = `${30 + 10 * i}px`;
     elements.divBoxes.append(newEl);
   }
 }
 
-function destroyBoxes(amount) {
-  amount = input.value;
-
-  for (let i = 0; i < Number(amount); i += 1) {
-    elements.divBoxes.lastElementChild.remove();
-  }
+function destroyBoxes() {
+  input.value = "";
+  elements.divBoxes.innerHTML = "";
 }
 
 function getRandomHexColor() {
