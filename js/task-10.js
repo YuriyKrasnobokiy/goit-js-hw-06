@@ -15,14 +15,15 @@ buttonDestroy.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
   amount = input.value;
-
+  let arr = [];
   for (let i = 0; i < Number(amount); i += 1) {
-    let newEl = document.createElement("div");
+    const newEl = document.createElement("div");
     newEl.style.backgroundColor = getRandomHexColor();
     newEl.style.width = `${30 + 10 * i}px`;
     newEl.style.height = `${30 + 10 * i}px`;
-    elements.divBoxes.append(newEl);
+    arr.push(newEl);
   }
+  elements.divBoxes.append(...arr);
 }
 
 function destroyBoxes() {
