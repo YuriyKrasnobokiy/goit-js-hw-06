@@ -14,6 +14,7 @@ buttonCreate.addEventListener("click", createBoxes);
 buttonDestroy.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
+  elements.divBoxes.innerHTML = "";
   amount = input.value;
   let arr = [];
   for (let i = 0; i < Number(amount); i += 1) {
